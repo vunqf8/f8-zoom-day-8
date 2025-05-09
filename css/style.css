@@ -16,6 +16,7 @@
 
 html {
   font-size: 62.5%;
+  position: f;
 }
 
 body {
@@ -148,6 +149,10 @@ select {
   display: flex;
 }
 
+.nav li {
+  position: relative;
+}
+
 .nav a {
   display: inline-block;
   padding: 20px;
@@ -158,6 +163,55 @@ select {
   letter-spacing: 1.1px;
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+.nav li:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: scaleY(1);
+}
+
+/* Submenu */
+.submenu {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  min-width: 240px;
+  background: var(--white);
+  opacity: 0;
+  visibility: hidden;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: all 0.3s ease-in-out;
+}
+
+.submenu::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  left: 0;
+  top: -10px;
+}
+
+.submenu a {
+  color: #0009;
+  line-height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+  text-decoration: none;
+  transition: all 0.3s linear;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.submenu li:hover a {
+  color: var(--white);
+  background: var(--primary);
+  padding-left: 30px;
 }
 
 .action-wrapper {
@@ -252,16 +306,20 @@ h1.heading {
 }
 
 .menu a {
+  position: relative;
+  left: 0;
   display: flex;
   align-items: center;
   height: 40px;
   padding-inline: 25px;
   text-decoration: none;
   color: #000000b3;
+  transition: all 0.3s ease-in-out;
 }
 
 .menu a:hover {
   color: var(--secondary);
+  left: 6px;
 }
 /* End sidebar */
 
@@ -330,10 +388,37 @@ h1.heading {
   transition: all 0.5s ease-in-out;
 }
 
+.course-item:nth-child(2) .thumb-wrapper:before {
+  transition: none;
+}
+
 .course-item .thumb-wrapper {
+  position: relative;
   display: block;
   aspect-ratio: 1 / 0.8;
   overflow: hidden;
+}
+
+.course-item .thumb-lightning:before {
+  content: "\e0b7";
+  /* content: "1000"; */
+  font-family: "Font Awesome 6 Free";
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  background-color: var(--primary);
+  color: var(--white);
+  width: 140px;
+  height: 70px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  top: -36px;
+  right: -60px;
+  padding-bottom: 3px;
+  transform: rotate(35deg);
+  z-index: 10;
 }
 
 .course-item .thumb,
@@ -727,3 +812,13 @@ h1.heading {
   background: var(--secondary);
 }
 /* End Blog */
+
+/* Messenger chat */
+.messenger-chat img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+}
