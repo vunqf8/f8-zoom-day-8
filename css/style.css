@@ -828,11 +828,10 @@ h1.heading {
   position: sticky;
   top: 0;
   z-index: 1000;
-
+  background-color: #222;
   text-align: center;
   padding-bottom: 20px;
-  /* border-bottom: 1px solid #474646; */
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid #474646;
 }
 
 .outline-wrapper .heading-list h1 {
@@ -919,7 +918,7 @@ ol li::after {
   display: flex;
   z-index: 1;
   position: sticky;
-  top: 148px;
+  top: 146px;
   padding: 12px 0 12px 20px;
   font-size: 2rem;
   font-weight: 600;
@@ -927,9 +926,9 @@ ol li::after {
   background: #333838;
 }
 
-/* .outline-item:last-child {
-  height: 350px;
-} */
+.outline-item:last-child {
+  min-height: 350px;
+}
 
 /* End  */
 
